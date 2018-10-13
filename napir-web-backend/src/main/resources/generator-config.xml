@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE generatorConfiguration PUBLIC "-//mybatis.org//DTD MyBatis Generator Configuration 1.0//EN" "http://mybatis.org/dtd/mybatis-generator-config_1_0.dtd">
+
+<generatorConfiguration>
+    <context id="MySQLTables" targetRuntime="MyBatis3">
+
+        <!-- DB连接 -->
+        <jdbcConnection driverClass="org.postgresql.Driver"
+                        connectionURL="jdbc:postgresql://localhost:5432/zhangyixu"
+                        userId="byron"
+                        password="byron">
+        </jdbcConnection>
+
+        <!-- Model生成定义 -->
+        <javaModelGenerator
+                targetPackage="com.napir.institution.dev.dao.model"
+                targetProject="src/main/java">
+            <property name="enableSubPackages" value="true" />
+            <property name="trimStrings" value="true" />
+        </javaModelGenerator>
+
+        <!-- SQL XML 生成设定 -->
+        <sqlMapGenerator
+                targetPackage="com.napir.institution.dev.dao.mapper"
+                targetProject="src/main/java">
+            <property name="enableSubPackages" value="true" />
+        </sqlMapGenerator>
+
+        <!-- Wrapper生成设定 -->
+        <javaClientGenerator
+                type="XMLMAPPER"
+                targetPackage="com.napir.institution.dev.dao.mapper"
+                targetProject="src/main/java">
+            <property name="enableSubPackages" value="true" />
+        </javaClientGenerator>
+
+        <!-- 生成表对象指定 -->
+        <table tableName="com_user">
+            <property name="useActualColumnNames" value="true" />
+        </table>
+
+    </context>
+</generatorConfiguration>

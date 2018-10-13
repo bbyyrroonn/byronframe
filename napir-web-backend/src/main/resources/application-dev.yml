@@ -1,0 +1,23 @@
+# 配置内嵌Tomcat服务
+server:
+  port: 9000
+  tomcat:
+    uri-encoding: UTF-8
+
+# 配置Spring
+spring:
+  # 配置数据源
+  datasource:
+    url: jdbc:postgresql://localhost:5432/zhangyixu
+    driver-class-name: org.postgresql.Driver
+    username: byron
+    password: byron
+
+# 配置Mybatis
+mybatis:
+    type-aliases-package: com.napir.institution.dev.dao.model
+    type-handlers-package: com.napir.institution.dev.dao.model
+    configuration:
+        map-underscore-to-camel-case: true
+        default-fetch-size: 100
+        default-statement-timeout: 30
