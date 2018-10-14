@@ -1,6 +1,8 @@
 <template>
   <div id="app">
-    <login></login>
+    <div>
+      <login></login>
+    </div>
   </div>
 </template>
 
@@ -9,7 +11,8 @@
   import 'common/css/font-awesome.css';
   import 'common/css/beyond.css';
 
-  import Login from 'components/login/login'
+  import 'common/css/reset.css';
+  import Login from 'components/login/login';
 
   export default {
     name: 'app',
